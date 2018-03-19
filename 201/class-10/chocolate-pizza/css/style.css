@@ -36,6 +36,8 @@ a.primary {
 }
 
 /* Center it all to 900px */
+body header { font-size:1em; }
+
 body > header, 
 main,
 footer {
@@ -44,7 +46,8 @@ footer {
 }
 
 .deck.separator-top {
-    border-top:1em solid #ddd;
+    border-top:1em solid #fff;
+    border-image: linear-gradient(45deg, #ccc, #fff) 100;
     padding-top:1.5em;
     margin-top:2.5em;
 }
@@ -174,14 +177,40 @@ footer {
 
 /* RECIPE CARD */
 
+    /* Used column-count:2 on the UL to get the columns of ingredients to "snake" in order */
+    /* If you use the floats instead, they would zig-zag */
+
     .recipe {
+        column-count:2;
         font-family: 'Patrick Hand SC', cursive;
-        font-size:1.75em;
+        font-size:1.6em;
         overflow:hidden;
         padding:.5em 1.5em;
     }
     
     .recipe li {
-        float:left;
-        width:50%;
+        /* float:left; */
+        margin-bottom:.5em;
+        /* width:45%; */
     }
+
+    .recipe span {
+        display:inline-block;
+        vertical-align:top;
+        white-space:normal;
+    }
+
+    .recipe label {
+        margin:0;
+        padding:0;
+        white-space:nowrap;
+    }
+
+    .recipe input[type=checkbox] {
+        vertical-align:middle;
+    }
+
+    :checked + span  {
+        text-decoration: line-through;
+    }
+
