@@ -1,9 +1,12 @@
 'use strict';
 
+var numImages = 5;
 var maxVotes = 25;
 var voteTotal = 0;
 var lastSet = {};
 var thisSet = {};
+
+var imageContainer = document.getElementById('pictures');
 
 // Picture Contructor
 var Picture = function(filePath, name) {
@@ -37,6 +40,24 @@ function setupPictures() {
     new Picture('assets/usb.gif', 'USB');
     new Picture('assets/water-can.jpg', 'Water Can');
     new Picture('assets/wine-glass.jpg', 'Wine Glass');
+}
+
+function renderImageTags() {
+
+    for( var i=1; i <= numImages; i++ ) {
+        var card = document.createElement('div');
+            card.classList.add('card');
+        var figure = document.createElement('figure');
+        var figcaption = document.createElement('figcaption');
+        var image = document.createElement('img');
+            image.id = 'picture' + i;
+
+        figure.appendChild(image);
+        figure.appendChild(figcaption);
+        card.appendChild(figure);
+        imageContainer.appendChild(card);
+
+    }
 }
 
 function showRandomPictures(n) {
@@ -75,32 +96,42 @@ function insertRandomImage(image,caption) {
     }
 }
 
-function clickPic(event) {
+function handleImageClick(event) {
+
+    var imageName = event.target.alt;
+
+    updateVoteCount(imageName);
+
+    if( voteTotal >= maxVotes ) { 
+        finish(); 
+    }
+    else {
+        showRandomPictures(3);
+    }
+}
+
+function updateVoteCount(imageName) {
 
     for( var i = 0; i<Picture.allPictures.length; i++ ) { 
-        if ( Picture.allPictures[i].name === event.target.alt ) { 
+        if ( Picture.allPictures[i].name === imageName ) { 
             Picture.allPictures[i].clicks++;
         }
     }
 
     voteTotal++;
-
-    if( voteTotal >= maxVotes ) { finish(); }
-
-    showRandomPictures(3);
 }
 
-function toggleEventListeners() {
-    for( var image of document.getElementsByTagName('img') ) {
-        if ( voteTotal >= 25 ) { 
-            image.removeEventListener('click', clickPic);
-        } else {
-            image.addEventListener('click', clickPic);
-        }
+function toggleEventListener() {
+
+    if ( voteTotal >= maxVotes ) { 
+        imageContainer.removeEventListener('click', handleImageClick);
+    } else {
+        imageContainer.addEventListener('click', handleImageClick);
     }
 }
 
 function showTotals() {
+
     var totalsList = document.getElementById("totals");
 
     // Sort by CTR
@@ -129,15 +160,18 @@ function showTotals() {
 }
 
 function finish() {
-    toggleEventListeners();
+    toggleEventListener();
     showTotals();
 }
 
 // Create the picture list
 setupPictures();
 
-// Turn on the event listeners
-toggleEventListeners();
+// Create image elements
+renderImageTags();
+
+// Turn on the event listener
+toggleEventListener();
 
 // Do the first randomization
-showRandomPictures(3);
+showRandomPictures(numImages);
