@@ -106,7 +106,7 @@ function handleImageClick(event) {
         finish(); 
     }
     else {
-        showRandomPictures(3);
+        showRandomPictures(numImages);
     }
 }
 
