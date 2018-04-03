@@ -11,6 +11,7 @@ function loadCart() {
 function showCart() {
     
     // TODO: Find the table
+    var tableBody = document.querySelector('#cart tbody');
 
     // TODO: Iterate over the items in the cart
         // TODO: Create a TR
@@ -18,12 +19,15 @@ function showCart() {
         // TODO: Add the TR to the TBODY and both TD's to the TR
     for( var i in Cart ) { 
         var tr = document.createElement('tr');
+        var xTD = document.createElement('td');
+            xTD.textContent = 'x';
         var qTD = document.createElement('td');
             qTD.textContent = Cart[i].quantity;
         var iTD = document.createElement('td');
             iTD.textContent = Cart[i].item;
 
         tableBody.appendChild(tr);
+        tr.appendChild(xTD);
         tr.appendChild(qTD);
         tr.appendChild(iTD);
         console.log("Added Item");
