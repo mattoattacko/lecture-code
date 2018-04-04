@@ -1,0 +1,20 @@
+{
+  "name": "chatroom-functional",
+  "version": "1.0.0",
+  "description": "Single File, TCP Server",
+  "main": "chatroom.js",
+  "scripts": {
+    "watch": "nodemon server.js",
+    "start": "node server.js",
+    "test": "jest --verbose --coverage -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.3.0"
+  },
+  "dependencies": {
+    "require-dir": "^1.0.0"
+  }
+}
