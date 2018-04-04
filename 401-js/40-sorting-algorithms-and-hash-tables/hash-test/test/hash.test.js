@@ -26,13 +26,13 @@ describe('hash map', () => {
       {key:"washington", value: "also cool"},
       {key:"foo", value: 42},
       {key:"array", value: [1,2,3]},
-      {key: "code fellows", value: "401"},
+      {key: "code fellows", value: "401-js"},
       {key: "sdfgdfs", value: "404"},
-      {key: "iwendkjs", value: "401"},
-      {key: "rioejf23wefs", value: "401"},
-      {key: "dlkfn21oi3rnw", value: "401"},
-      {key: "ldfkn2k3w", value: "401"},
-      {key: "lord of the rings", value: "401"}
+      {key: "iwendkjs", value: "401-js"},
+      {key: "rioejf23wefs", value: "401-js"},
+      {key: "dlkfn21oi3rnw", value: "401-js"},
+      {key: "ldfkn2k3w", value: "401-js"},
+      {key: "lord of the rings", value: "401-js"}
     ]
     all.forEach(item => {
       let key = item.key

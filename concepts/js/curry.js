@@ -5,9 +5,9 @@
 
 // Old School
 let greetF = (greeting, name) => {
-    console.log(greeting, name);
-}
-greetF("Hello", "John");
+  console.log(greeting, name);
+};
+greetF('Hello', 'John');
 
 
 // With currying, we get a function back, and then
@@ -19,11 +19,11 @@ let greetC = function(greeting) {
 };
 
 // Here, we do it with a named instigator
-let sayHello = greetC("Hello");
-sayHello("John");
+let sayHello = greetC('Hello');
+sayHello('John');
 
 // Here, we do it as a series
-greetC("Hi")("Johnny");
+greetC('Hi')('Johnny');
 
 
 
@@ -37,6 +37,6 @@ var greetDeeplyCurried = function(greeting) {
   };
 };
 
-var greetAwkwardly = greetDeeplyCurried("Hello")("...")("?");
-greetAwkwardly("John"); //"Hello...Eddie?"
+var greetAwkwardly = greetDeeplyCurried('Hello')('...')('?');
+greetAwkwardly('John'); //"Hello...Eddie?"
 

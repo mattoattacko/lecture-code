@@ -55,7 +55,7 @@ describe('AUTH router', () => {
       })
     })
 
-    test('GET /login 401 due to bad password', () => {
+    test('GET /login 401-js due to bad password', () => {
       let tempMock
       accountMock.create()
       .then(mock => {
@@ -69,7 +69,7 @@ describe('AUTH router', () => {
       })
     })
 
-    test('GET /login 401 due to bad account', () => {
+    test('GET /login 401-js due to bad account', () => {
       return superagent.get(`${apiURL}/login`)
       .auth('shark_slug_789','hello world')
       .then(Promise.reject)

@@ -39,7 +39,7 @@ describe('/profiles', () => {
       })
     })
 
-    test('401 should', () => {
+    test('401-js should', () => {
       return superagent.post(`${apiURL}/profiles`)
       .set('Authorization', `Bearer badtoken`)
       .send({
