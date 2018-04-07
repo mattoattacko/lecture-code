@@ -6,3 +6,6 @@
   - string.length (#)
   - string[#]  (new str)
   - string.slice (new str)
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

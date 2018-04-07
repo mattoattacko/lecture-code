@@ -1,6 +1,6 @@
 'use strict';
 
-const net = require("net");
+const net = require('net');
 const port = 3000;
 const server = net.createServer();
 
@@ -12,48 +12,48 @@ let socketPool = [];
 // IP: Building, Port: Apartment Number, Socket: Cubicle
 server.on('connection', (socket) => {
 
-    socket.username = `User ${Math.random()}`;
+  socket.username = `User ${Math.random()}`;
 
-    socketPool = [...socketPool, socket];
+  socketPool = [...socketPool, socket];
 
-    socket.on("data", (buffer) => {
+  socket.on('data', (buffer) => {
 
-        let text = buffer.toString();
+    let text = buffer.toString();
 
-        //  Use /nickname <something> to change my name
-        if ( text.startsWith("/nickname"))  {
-            socket.username = text.trim().split(" ").slice(1).join(" ");
-        }
+    //  Use /nickname <something> to change my name
+    if ( text.startsWith('/nickname')) {
+      socket.username = text.trim().split(' ').slice(1).join(' ');
+    }
 
-        // Direct Message a specific user
-        if ( text.startsWith("/dm")){
+    // Direct Message a specific user
+    if ( text.startsWith('/dm')){
 
-            // get the username
-            // Send that socket your text
+      // get the username
+      // Send that socket your text
 
-        }
+    }
 
-        // Outta Here!
-        if ( text.startsWith("/quit")) {
-            // delete your socket from the clientpool
-        }
+    // Outta Here!
+    if ( text.startsWith('/quit')) {
+      // delete your socket from the clientpool
+    }
 
-        // Broadcast the message
-        console.log(socket.username, ":", text);
+    // Broadcast the message
+    console.log(socket.username, ':', text);
 
-        socketPool.forEach(function(connection) {
-            connection.write(text);
-        });
-
+    socketPool.forEach(function(connection) {
+      connection.write(text);
     });
 
-    // socket.on('error');
-    // socket.on('close');
-    // socket.on('disconnect');
+  });
+
+  // socket.on('error');
+  // socket.on('close');
+  // socket.on('disconnect');
 
 
 });
 
 server.listen(port, ()=>{
-    console.log("Alive on port", port);
+  console.log('Alive on port', port);
 });
