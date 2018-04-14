@@ -1,0 +1,74 @@
+form {
+  background: #fff;
+  margin: 2em;
+  width: 200px;
+}
+form label.textfield {
+  display: block;
+  margin: 2em;
+  position: relative;
+}
+form label.textfield span, form label.textfield input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  height: 1.5em;
+  line-height: 1.5em;
+  width: 100%;
+}
+form label.textfield span {
+  color: navy;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+}
+form label.textfield input {
+  outline: none;
+  transition: all .5s linear;
+}
+form label.textfield input:focus {
+  border-bottom: 1px solid red;
+}
+form label.textfield input:focus ~ span {
+  border: none;
+  top: -1.1em;
+  bottom: 1.1em;
+  left: 0;
+  right: 0;
+  font-size: .75em;
+  height: 1em;
+  line-height: 1em;
+  transition: all .115s ease;
+}
+form label.check {
+  height: 1.5em;
+}
+form label.check span {
+  background: #eee;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+}
+form label.check span.off {
+  background: #eee;
+}
+form label.check span.on {
+  background: green;
+}
+form label.check input[type=checkbox] {
+  display: none;
+}
+form label.check input[type=checkbox] ~ span.on {
+  display: none;
+}
+form label.check input[type=checkbox] ~ span.off {
+  display: inline-block;
+}
+form label.check input[type=checkbox]:checked ~ span.off {
+  display: none;
+}
+form label.check input[type=checkbox]:checked ~ span.on {
+  display: inline-block;
+}
