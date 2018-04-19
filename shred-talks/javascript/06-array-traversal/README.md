@@ -10,6 +10,8 @@
   - forEach
   
   **Advanced**
+  - every()
+  - includes()
   - entries() (returns an iterator)
 
 
