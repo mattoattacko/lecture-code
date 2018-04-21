@@ -5,4 +5,4 @@ var b = a.subObj;
 b.value++;
 
 console.log(a);
-console.log(b);
+console.log(a);
