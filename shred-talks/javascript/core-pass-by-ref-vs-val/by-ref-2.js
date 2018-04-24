@@ -1,8 +1,7 @@
 'use strict';
 
 var a = {subObj: {value: 0}};
-var b = a.subObj;
-b.value++;
+var b  = a;
 
-console.log(a);
-console.log(a);
+b.subObj.value = 4;
+a;

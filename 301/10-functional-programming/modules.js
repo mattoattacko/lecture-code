@@ -1,18 +1,68 @@
+let a = {
+  value: 1
+};
 
-(function(module))
+let b = a;
 
+b.value = 7;
 
+a;
 
+let c = 7;
+let d = c;
+c;
+d
+d = 9
+c =15
+c
+d
 
-let Dog = function(name, breed) {
+let app = {value:1};
+let person = "john";
 
-  this.description = `${name} is a ${breed}`;
-  let sound = "bark";
-  if ( breed.toLowerCase().includes('terrier') ) { sound = "Squeek"; }
+let something = function(module) {
 
-  let speak = console.log('bark');
+  let person = "fred";
+
+  module.b = "foo";
 
 };
 
-let rosie = new Dog('Rosie', 'Mutt');
-rosie;
+something(app);
+
+
+
+person;
+app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let Dog = function(name, breed) {
+//
+//   this.description = `${name} is a ${breed}`;
+//   let sound = "bark";
+//   if ( breed.toLowerCase().includes('terrier') ) { sound = "Squeek"; }
+//
+//   let speak = console.log('bark');
+//
+// };
+//
+// let rosie = new Dog('Rosie', 'Mutt');
+// rosie;
