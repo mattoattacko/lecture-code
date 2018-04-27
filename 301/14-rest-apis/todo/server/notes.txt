@@ -1,0 +1,31 @@
+
+
+const GIT_USER="johncokos";
+const GIT_TOKEN="99763927086b646b963a65b02393f7a478dfbdda";
+const GIT_API_URL = "http://api.github.com/issues";
+
+app.get('/api/v1/tasks', (req,res) => {
+  client.query( "SELECT * FROM tasks" )
+  .then( fetchFromGitHub )
+  .then( allTasks => { res.send(allTasks) })
+  .catch( err => {
+    console.error(err);
+    res.sendStatus(500).send("Error");
+  });
+});
+
+let fetchFromGitHub = (localResults) => {
+
+  return superagent.get(GIT_API_URL)
+  .auth(GIT_USER,GIT_TOKEN)
+  .then(response => {
+
+    let gitHubResponses = response.body.reduce((issues, issue) => {
+      issues.push({task: issue.title, complete: false})
+      return issues;
+    }, []);
+
+    return [].concat(localResults.rows, gitHubResponses);
+  })
+  .catch(console.err);
+}
