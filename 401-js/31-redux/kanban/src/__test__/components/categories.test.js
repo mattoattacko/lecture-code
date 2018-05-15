@@ -17,7 +17,7 @@ describe('<Categories />', () => {
 
     test('', () => {
 
-        let title1 = "New Category Title";
+        let title1 = "New Category Titlex";
         let title2 = "Another Category Title";
 
         let newCategoryForm = wrapper.find(".categoryForm");
