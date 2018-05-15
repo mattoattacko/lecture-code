@@ -1,10 +1,10 @@
 
-let person1 = { name: "John", age: 49 };
-let person2 = { name: "Cathy", age: NaN };
+let person1 = { name: 'John', age: 49 };
+let person2 = { name: 'Cathy', age: NaN };
 
 var sayHello = function() {
-    console.log( `Hello ${this.name}` );
-}
+  console.log( `Hello ${this.name}` );
+};
 
 sayHello();
 sayHello.call(person1);
@@ -24,34 +24,34 @@ sayHiToCathy();
 
 var myObj = {
 
-    foo: function() {
-        console.log("foo");
-    },
+  foo: function() {
+    console.log('foo');
+  },
 
-    bar: function() {
-        console.log("bar");
-    },
+  bar: function() {
+    console.log('bar');
+  },
 
-    baz: function(fn) {
-        fn.call();
-    },
+  baz: function(fn) {
+    fn.call();
+  },
 
-    runbadly: function() {
-        let that = this;
-        this.baz(function(){
-            that.bar();
-            that.foo();
-        });
-    },
+  runbadly: function() {
+    let that = this;
+    this.baz(function(){
+      that.bar();
+      that.foo();
+    });
+  },
     
-    run: function() {
+  run: function() {
 
-        this.baz(function(){
-            this.bar();
-            this.foo();
-        }.bind(this));
+    this.baz(function(){
+      this.bar();
+      this.foo();
+    }.bind(this));
 
-    }
+  },
 
 };
 
