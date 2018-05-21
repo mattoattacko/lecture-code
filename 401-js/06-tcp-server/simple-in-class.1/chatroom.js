@@ -1,9 +1,10 @@
 'use strict';
 
-const EventEmitter = require('events');
 const net = require('net');
+const EventEmitter = require('events');
+const requireDir = require('require-dir');
 
-const port = 8082;
+const port = 8081;
 const server = net.createServer();
 const events = new EventEmitter();
 const socketPool = {};
@@ -52,10 +53,12 @@ events.on("@dm", (data, userId) => {
   };
 });
 
-events.on("@nick", (data, userId) => {
-  socketPool[userId].nickname = data.payload;
-});
+let startServer = () => {
+  server.listen(port, () => {
+    console.log('Alive on port', port);
+  });
+};
 
-server.listen(port, () => {
-  console.log('Alive on port', port);
-});
+module.exports = exports = { events, socketPool, startServer };
+
+const actions = requireDir(__dirname + '/actions/');
