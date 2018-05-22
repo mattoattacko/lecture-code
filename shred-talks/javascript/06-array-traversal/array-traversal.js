@@ -2,7 +2,9 @@ let people = ["John", "Jason", "Josie", "Jim"];
 let aPerson = {
   first: "John",
   last: "Cokos"
-}
+};
+
+aPerson;
 
 // indexOf
 // console.log( people.indexOf('Josie') );
