@@ -27,13 +27,11 @@ promiseAdd(2, 3)
 
 // Spread (they run independently, in parallel)
 let arrayOfPromises = [];
-
-  arrayOfPromises.push( promiseAdd(2,3) );
-  arrayOfPromises.push( promiseSquare(3) );
-
+arrayOfPromises.push( promiseAdd(2,3) );
+arrayOfPromises.push( promiseSquare(3) );
 
 // You could have just used "values" as the param there, and gotten an array, but named values are of course cleaner.
 Promise.all(arrayOfPromises).then( ([added, squared]) => {
-  console.log("Added", added);
-  console.log("Squared", squared);
+  console.log('Added', added);
+  console.log('Squared', squared);
 });
