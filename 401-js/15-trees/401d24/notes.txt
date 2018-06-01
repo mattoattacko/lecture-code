@@ -1,0 +1,35 @@
+Trees
+
+Root
+Node
+Link/Edge
+Branch
+Leaf
+Parent
+Child
+Sibling
+Sub tree
+Level
+Height (leaf to root)
+  - Distance from root to the furthest leaf
+Depth (root to node)
+  -
+Balance (heights<=1)
+
+Flash cards tool - Anki
+
+Average O(log n)
+
+Ways to traverse all nodes
+Pre order
+  Root left right
+
+In order
+  Left root right
+
+Post order
+  Left right root
+
+This is all about the order that we visit the root
+
+Draw a traversal of each type
