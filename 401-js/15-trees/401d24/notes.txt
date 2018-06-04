@@ -10,10 +10,15 @@ Child
 Sibling
 Sub tree
 Level
+
 Height (leaf to root)
-  - Distance from root to the furthest leaf
+  - Number of edges on the longest path from the node to a leaf
+  - Leaves always have a height of 0
+
 Depth (root to node)
-  -
+  - Number of edges from the node to the tree's root
+  - Roots always have a depth of 0
+
 Balance (heights<=1)
 
 Flash cards tool - Anki
