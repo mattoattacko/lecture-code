@@ -13,7 +13,8 @@ export default (req, res, next) => {
         }
         req.user = user;
         next();
-      });
+      })
+      .catch(next);
   };
 
   // If we're not authenticated either show an error or pop a window
