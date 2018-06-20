@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> (Snapshot Test) renders cleanly 1`] = `
+Array [
+  <header>
+    <h1>
+      Starter App
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/items"
+            onClick={[Function]}
+          >
+            List
+          </a>
+        </li>
+        <li>
+          <a
+            href="/item"
+            onClick={[Function]}
+          >
+            Item
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  <main />,
+  <footer>
+    <h3>
+      Some cool stuff for the footer here
+    </h3>
+  </footer>,
+]
+`;
