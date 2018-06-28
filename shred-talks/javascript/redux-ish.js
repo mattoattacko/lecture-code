@@ -1,61 +1,52 @@
 const littleRedux = reducer => {
-    let state;
-    let listeners = [];
+  let state;
+  let listeners = [];
 
-    const getState = () => state;
+  const getState = () => state;
 
-        
-    // the last 'middleware' is the actual dispatch
-    // let middleware = [];
-    // middleware.push( action => {
-    //     state = reducer(state, action);
-    //     listeners.forEach(listener => listener());
-    // });
-        
+  const dispatch = action => {
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  };
 
-    const dispatch = action => {
-        state = reducer(state, action);
-        listeners.forEach(listener => listener());
-    };
+  const subscribe = listener => {
+    listeners.push(listener);
+  };
 
-    const subscribe = listener => {
-        listeners.push(listener);
-    };
+  dispatch({});
 
-    dispatch({});
-
-    return { getState, dispatch, subscribe };
+  return { getState, dispatch, subscribe };
 };
 
 let actions = {
-    INC: {
-        type: 'INCREMENT',
-        payload: { amount: 1 },
-    },
+  INC: {
+    type: 'INCREMENT',
+    payload: { amount: 1 },
+  },
 
-    TWO: {
-        type: 'INCREMENT',
-        payload: { amount: 2 },
-    },
+  TWO: {
+    type: 'INCREMENT',
+    payload: { amount: 2 },
+  },
 
-    DEC: {
-        type: 'DECREMENT',
-    },
+  DEC: {
+    type: 'DECREMENT',
+  },
 };
 
 let reducer = (state = 0, action) => {
-    let { type, payload } = action;
+  let { type, payload } = action;
 
-    switch (type) {
-        case 'INCREMENT':
-            return state + payload.amount || 1;
+  switch (type) {
+    case 'INCREMENT':
+      return state + payload.amount || 1;
 
-        case 'DECREMENT':
-            return state - 1;
+    case 'DECREMENT':
+      return state - 1;
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 };
 
 let store = littleRedux(reducer);

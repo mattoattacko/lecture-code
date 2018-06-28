@@ -1,0 +1,27 @@
+@import "../../style/core";
+
+$height:80px;
+
+header {
+  align-items:center;
+  background:$dark;
+  color:$light;
+  display:flex;
+  flex-direction:row;
+  height:$height;
+  padding:0 2em;
+
+  .logo {
+    background: url(assets/logo.png) no-repeat;
+    background-size: 100%;
+    height:calc(#{$height} / 1.75);
+    width:calc(#{$height} / 1.75);
+  }
+
+  .title {
+    flex:1;
+    font-size:calc(#{$height} / 3.5);
+    font-weight:300;
+    margin:0;
+  }
+}

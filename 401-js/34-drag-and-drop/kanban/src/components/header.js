@@ -2,17 +2,17 @@ import React from 'react';
 
 class Header extends React.Component {
     
-    render() {
+  render() {
         
-        return (
-            <header>
-                <h1>
-                    {this.props.appTitle}
-                </h1>
-            </header>
-        )
+    return (
+      <header>
+        <h1>
+          {this.props.appTitle}
+        </h1>
+      </header>
+    );
             
-    }
+  }
     
 }
 

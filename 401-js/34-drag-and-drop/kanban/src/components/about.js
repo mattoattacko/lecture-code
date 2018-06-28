@@ -2,15 +2,15 @@ import React from 'react';
 
 class About extends React.Component {
     
-    render() {
+  render() {
         
-        return (
-            <div>
-                <h2>About {this.props.match.params.who}</h2>
-            </div> 
-        )
+    return (
+      <div>
+        <h2>About {this.props.match.params.who}</h2>
+      </div> 
+    );
             
-    }
+  }
     
 }
 

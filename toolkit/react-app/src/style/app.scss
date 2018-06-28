@@ -1,0 +1,28 @@
+@import '../style/core';
+
+html,body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  color: $dark;
+  font-family:$font;
+  font-weight:100;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+#root {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+main {
+  flex:1;
+}
