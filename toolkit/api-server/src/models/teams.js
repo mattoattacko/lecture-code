@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+require('mongoose-schema-jsonschema')(mongoose);
 
 const teamSchema = mongoose.Schema({
   name: {type:String, require:true},
@@ -8,7 +9,7 @@ const teamSchema = mongoose.Schema({
 });
 
 teamSchema.pre('findOne', function(next) {
-  this.populate('players');
+  // this.populate('players');
   next();
 });
 

@@ -3,7 +3,9 @@
 import requireAll from 'require-dir';
 const models = requireAll(`${__dirname}/../models`);
 
-export default (req,res,next) => {
+const list = () => Object.keys(models);
+
+const finder = (req,res,next) => {
   let model = req.params.model;
   if(model && models[model] && models[model].default ) {
     req.model = models[model].default;
@@ -14,3 +16,4 @@ export default (req,res,next) => {
   }
 };
 
+export {finder,list};

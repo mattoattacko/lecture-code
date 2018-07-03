@@ -1,18 +1,20 @@
 'use strict';
 
 import mongoose from 'mongoose';
+require('mongoose-schema-jsonschema')(mongoose);
 import Teams from './teams.js';
+
 
 const playerSchema = mongoose.Schema({
   name: { type:String, required:true },
   position: { type:String, uppercase:true, required:true },
-  bats: { type:String, uppercase:true, default:'R', enum:['R','r','L','l'] },
-  throws: { type:String, uppercase:true, default:'R', enum:['R','r','L','l'] },
+  bats: { type:String, uppercase:true, default:'R', enum:['R','L'] },
+  throws: { type:String, uppercase:true, default:'R', enum:['R','L'] },
   team: { type:mongoose.Schema.Types.ObjectId, ref:'teams' },
 });
 
 playerSchema.pre('findOne', function(next) {
-  this.populate('team');
+  // this.populate('team');
   next();
 });
 
@@ -34,7 +36,7 @@ playerSchema.pre('save', function(next) {
           { $addToSet: {players:playerId} }
         )
           .then( Promise.resolve() )
-          .catch(err => Promise.reject(err) )
+          .catch(err => Promise.reject(err) );
       }
     })
     .then(next())
