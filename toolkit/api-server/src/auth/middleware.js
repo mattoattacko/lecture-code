@@ -76,6 +76,8 @@ export default (req, res, next) => {
       let token = authHeader.replace(/bearer\s+/i, '');
       authorize(token);
     }
+
+    // authorize via capability .... depends on a parameter
   } catch(e) {
     next(e);
   }

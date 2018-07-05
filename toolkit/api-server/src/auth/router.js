@@ -19,7 +19,7 @@ authRouter.post('/signup', (req, res, next) => {
 });
 
 authRouter.get('/login',auth, (req, res, next) => {
-  res.cookie('Token', req.token); //, {domain:'.codesandbox.io'});
+  res.cookie('auth', req.token);
   res.send(req.token);
 });
 
@@ -31,9 +31,8 @@ authRouter.get('/oauth', (req, res, next) => {
   // to do that job. The route itself shouldn't contain any logic...
   oauth.authorize(req)
     .then ( token => {
-      console.log(token, URL);
-      res.cookie('Token', token);
-      res.redirect(URL);
+      res.cookie('auth', token);
+      res.redirect(`${URL}?token=${token}`);
     })
     .catch(next);
 });

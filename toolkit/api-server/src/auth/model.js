@@ -8,6 +8,17 @@ const userSchema = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   email: {type: String, required: true},
+  role: {type: String, required:true, default:'user', enum:['admin','editor','user']},
+});
+
+const capabilities = {
+  user: ['read'],
+  editor: ['read','update'],
+  admin: ['create','read','update','delete'],
+};
+
+userSchema.post('init', function(next) {
+  this.capabilities = capabilities[this.role] || [];
 });
 
 // Before we save, hash the plain text password
@@ -24,20 +35,6 @@ userSchema.pre('save', function(next) {
 });
 
 userSchema.statics.createFromOAuth = function(incoming) {
-  /*
-    {
-      kind: 'plus#personOpenIdConnect',
-      sub: '100592365129823370453',
-      name: 'John Cokos',
-      given_name: 'John',
-      family_name: 'Cokos',
-      picture: 'https://lh4.googleusercontent.com/-qN0rHFTCPXY/AAAAAAAAAAI/AAAAAAAAAAw/lGUgjyX0vIc/photo.jpg?sz=50',
-      email: 'john@codefellows.com',
-      email_verified: 'true',
-      locale: 'en',
-      hd: 'codefellows.com'
-    }
-   */
 
   if ( ! incoming || ! incoming.email ) {
     return Promise.reject('VALIDATION ERROR: missing username/email or password ');
@@ -76,7 +73,6 @@ userSchema.statics.authorize = function(token) {
   let query = {_id:parsedToken.id};
   return this.findOne(query)
     .then(user => {
-      // looked up their role and then all capabilities
       return user;
     })
     .catch(error => error);
@@ -90,7 +86,11 @@ userSchema.methods.comparePassword = function(password) {
 
 // Generate a JWT from the user id and a secret
 userSchema.methods.generateToken = function() {
-  return jwt.sign( {id:this._id}, process.env.SECRET || 'changeit' );
+  let tokenData = {
+    id:this._id,
+    capabilities:this.capabilities,
+  };
+  return jwt.sign(tokenData, process.env.SECRET || 'changeit' );
 };
 
 export default mongoose.model('users', userSchema);
