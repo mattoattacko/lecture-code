@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "authorizenet": "^1.0.5",
     "babel-env": "^2.4.1",
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-async-to-generator": "^6.24.1",

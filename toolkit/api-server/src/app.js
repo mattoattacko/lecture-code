@@ -8,6 +8,7 @@ import cors from 'cors';
 // Custom Libraries
 import router from './api/api.js';
 import authRouter from './auth/router.js';
+import paymentRouter from './payment/router.js';
 
 // Custom Middleware
 import errorHandler from './middleware/error.js';
@@ -19,10 +20,11 @@ let app = express();
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Our API Routes
 app.use(authRouter);
+app.use(paymentRouter);
 app.use(router);
 
 // Errors and 404's
@@ -33,9 +35,11 @@ let server = false;
 
 module.exports = {
   start: (port) => {
-    if(! server) {
+    if (!server) {
       server = app.listen(port, (err) => {
-        if(err) { throw err; }
+        if (err) {
+          throw err;
+        }
         console.log(`Server up on ${port}`);
       });
     }
@@ -44,8 +48,8 @@ module.exports = {
     }
   },
   stop: () => {
-    server.close( () => {
+    server.close(() => {
       console.log('Server has been stopped');
     });
-  },
+  }
 };
