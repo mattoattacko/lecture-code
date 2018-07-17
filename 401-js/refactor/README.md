@@ -138,6 +138,8 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
 
 **LAB:** Build a "Database / State Manager." Effectively, this is the old "list constructor", but using the all of the techniques from the week. The goal should be a list that can is stored to and retrieved from the filesystem. As a means of implementation, we can write "redux light" and make it a server-module and introduce that whole concept right now ... perhaps combining redux and the list? *We can use this on day 9 as well as to be a future module for storing configs or other things for future servers we write*
 
+... killed the bitmap in this first iteration. Maybe that should be the end of week lab? Can we roll that in with the state manager somehow?
+
 #### 01-node-ecosystem
   - **Lightning Talk:** Course Setup, Intro, Process, Tools, Expectations, Rubrics, How to submit code and lab assignments, etc
   - **Server Concept:** What is node and npm, package.json deep dive
@@ -285,23 +287,6 @@ The only difference in the old 07/08 was the restful endpoints.
 ---
 
 ## 2nd Half Modifications / Class Order
-Week 2
-31	CRUD
-32	Dynamic Forms
-33	Remote API
-34	CRUD Remotely
-
-Week 3
-36	Redux
-37	Redux Middleware
-38	Async (Thunk)
-39	Combined Reducers
-
-Week 4
-41	Authentication
-42	Authorization
-43	Searching
-44	Rotators
 ### Week 6
 
 **Overview/Goals:** Should learn this stuff ...
