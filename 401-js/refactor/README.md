@@ -76,15 +76,23 @@
 
 ## Course Lecture / Classroom Rhythm Suggestions
 
-Instead of daily labs, the proposal here is to teach it up and give them practice assignments for 4 days (which should take them a max of 3-4 hours) which cement the concepts through refactoring, adjustments, and generally diving it ... and then on Friday, assign a project lab which is due Sunday at midnight -- which is an assembly of all that was taught so far.  So, 4 "daily pracice sessions" and a bigger "build it" lab for each week. Suggestion: Have them pair up on the weekly project.
+  - Lectures will introduce 2 new topics each day
+    - Supportive, non-dependent concept (EDD, uploads, modules, css, generic component, etc)
+    - Bigger Concept (i.e. mongoose/ORM)
+  - ~Daily Labs~
+    - Daily Code Challenges and Practice (~3-4 hours / 5 points each)
+    - Katas, refactorings, mods made to the demo/lecture code
+  - Daily DSA Code Challenge (2-3 hours / 5 points each)
+  - Weekly DSA Implementation (10 Points)
+    - Assigned Friday, Due Monday 9am.
+  - Weekly Project (paired) (30 Points)
+    - Assigned Friday, Due Monday 9am.
+    - Based on the topics of the week, this is a build using all of the new material/components
 
-Practice labs are to be due at midnight each day and locked down (no re-submits). From a grading standpoint, each of them could be worth 5 points, and the weekend lab worth 30, so it's 50 points for each week for lecture code.
+**Thoughs on Grading**
+Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 30 Project). Currently, we separate code from whiteboards (15%/10%) and this point structure roughly matches that both in terms of time spent and point values. Do we want to further simplify this and make them "Code Assignments" (which covers all of it) just be 25%?
 
-Most weeks, there is also a new Data Structure taught on Friday, which is also due on Sunday. Thats generally a shorter lecture, so from a scheduling perspective, the students should have a solid 7 hours on Friday to pair up on the project lab each week. The DSA Implementation should be done solo, over the weekend.
-
-In looking at grading and points, there are 50 points per week from lecture/practice assignments, and 30 points for DSAs (20 from whiteboarding, and 10 for implmenting the new data structure). That's a total of 80 points. Currently, we separate code from whiteboards (15%/10%) and this point structure roughly matches that both in terms of time spent and point values. Do we want to further simplify this and make "Code" (which covers all of it) just be 25%?
-
-Lecture Schedule (M-Th)
+**Lecture Schedule (M-Th)**
 - :05 - Housekeeping and Preview
 - :30 - Whiteboard / DSA Review
 - :15 - Lightning Talk (Student)
@@ -95,7 +103,7 @@ Lecture Schedule (M-Th)
 - :60 - New Concept, Code Demo & Lab Prep
 
 
-Lecture Schedule (Fri)
+**Lecture Schedule (Fri)**
 - :05 - Housekeeping and Preview
 - :30 - Whiteboard / DSA Review
 - :15 - Lightning Talk (Student)
@@ -107,19 +115,19 @@ Lecture Schedule (Fri)
 ## Proposed Class Order
 
 | Week 1 | Week 2 | Week 3 | Week 4 |
-|:--------------------------:|:---------------------------:|:-------------------------:|:---------------------------:|
+| **DB/State Manager** | **Something cool** | **Generic API** | **Authenticate/ACL API** |
 | 01-node-ecosystem | 06-tcp-server | 11-express | 16-basic-authentication |
 | 02-object-array-mastery | 07-socket-io-server | 12-express-middleware | 17-oauth |
 | 03-classes-inheritance-fp | 08-vanilla-http-rest-server | 13-mongo-mongoose-orm | 18-bearer-authorization |
 | 04-async | 09-persistence | 14-relationship-modeling | 19-acl-authorization |
-| **Build a DB/State Manager** | **Build something cool** | **Build Generic API** | **Build Authenticated API** |
 |  |  |  |  |
 | Week 6 | Week 7 | Week 8 | Week 9 |
+| **React "kick-start"** | **Generic CMS** | **e-commerce store** | **enterprise/mobile store/cms** |
 | 26-component-based-ui-101 | 31-crud | 36-authentication | 41-aws-websites |
 | 27-testing-and-deployment | 32-dynamic-forms | 37-authorization | 42-aws-api-db-lamba |
 | 28-forms-props-state | 33-remote-api | 38-paymemt-gateways | 40-react-native |
 | 29-component-composition | 34-remote-crud | 39-web-security | 41-app-store-deployments |
-| **Build a react "kick-start"** | **Build a generic CMS** | **Build an e-commerce store** | **Refactor & Deploy store/cms** |
+
 
 ---
 
@@ -296,8 +304,10 @@ Week 4
 ### Week 6
 
 **Overview/Goals:** Should learn this stuff ...
+Students will understand and be familiar with the process and tools used to build React apps. Conecpts like state, store, debugging, testing, and front end deployment
 
 **LAB:** Project description here ...
+The week will end with a supremely solid and well setup React boilerplate application with properly setup modularization, CSS/SASS theming and organization, component state and app store configurations in place.
 
 #### 26-component-based-ui-101 (renamed frontend-tooling-and-react)
   - **Lightning Talk:**
@@ -339,28 +349,30 @@ Week 4
 ### Week 7
 
 **Overview/Goals:** Should learn this stuff ...
+More advanced data and state management as well as connecting the front-end to a backend with purpose (not making a pokemon app)
 
 **LAB:** Project description here ...
+Students will build a full CMS to interface with their backend services and data models using proper REST calls with a generic and modular UI pattern. Hookup with JSON-Schema on the backend and json-schema-form on the React side to build perfect, dynamic forms.
 
-#### 31-redux
+#### 31-crud
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 32-combining-reducers
+#### 32-dynamic-forms
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 33-redux-middleware
+#### 33-remote-api
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 34-xxx
+#### 34-remote-crud
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
@@ -369,28 +381,32 @@ Week 4
 ### Week 8
 
 **Overview/Goals:** Should learn this stuff ...
+Integrating the front-end application with services for authentication, handling of cookies and user sessions, and interfacing with payment systems.
 
 **LAB:** Project description here ...
+Design and build an eCommerce storefront with a customer login, that allows them to search and browse products, add items to a cart, save a cart for later, and checkout with one of a number of payment gateways.
 
-#### 36-asynchronous-actions
+#### 36-authentication
+  - **Lightning Talk:**
+  - **UI Concept:** Linked List Based Rotator Component
+  - **Lecture Topic:**
+  - **Homework:**
+    - Begin work on the <Auth> component
+
+#### 37-authorization
+  - **Lightning Talk:**
+  - **UI Concept:** Autofill Search Box
+  - **Lecture Topic:**
+  - **Homework:**
+    - Continue work on the <Auth> component
+
+#### 38-payment-gateways
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 37-authentication
-  - **Lightning Talk:**
-  - **UI Concept:**
-  - **Lecture Topic:**
-  - **Homework:**
-
-#### 38-authorization-acl
-  - **Lightning Talk:**
-  - **UI Concept:**
-  - **Lecture Topic:**
-  - **Homework:**
-
-#### 39-auth-component
+#### 39-web-security
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
@@ -399,28 +415,31 @@ Week 4
 ### Week 9
 
 **Overview/Goals:** Should learn this stuff ...
+Node + Travis + Heroku ain't the only way. Students should become familiar with AWS as a deployment and content delivery platform
 
 **LAB:** Project description here ...
+Deploy the store application at Amazon using pure AWS services. Implement device specific features and build it as a phone application suitable for Google Play or App Store launch.
 
-#### 41-crud-api-frontend
+#### 41-aws-websites
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 42-storefront
+#### 42-aws-api-dynamo-lambda
+  - **Lightning Talk:**
+  - **UI Concept:**
+  - **Lecture Topic:**
+  - **Homework:**
+    - Convert our current DB and API into lambda functions
+
+#### 43-react-native
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
   - **Homework:**
 
-#### 43-xxx
-  - **Lightning Talk:**
-  - **UI Concept:**
-  - **Lecture Topic:**
-  - **Homework:**
-
-#### 44-xxx
+#### 44-app-store-deployments
   - **Lightning Talk:**
   - **UI Concept:**
   - **Lecture Topic:**
