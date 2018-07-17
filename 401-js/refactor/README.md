@@ -115,6 +115,7 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
 ## Proposed Class Order
 
 | Week 1 | Week 2 | Week 3 | Week 4 |
+|----------------------------|-----------------------------|---------------------------|-----------------------------|
 | **DB/State Manager** | **Something cool** | **Generic API** | **Authenticate/ACL API** |
 | 01-node-ecosystem | 06-tcp-server | 11-express | 16-basic-authentication |
 | 02-object-array-mastery | 07-socket-io-server | 12-express-middleware | 17-oauth |
