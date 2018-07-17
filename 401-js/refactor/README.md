@@ -121,14 +121,14 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
 | 02-object-array-mastery | 07-socket-io-server | 12-express-middleware | 17-oauth |
 | 03-classes-inheritance-fp | 08-vanilla-http-rest-server | 13-mongo-mongoose-orm | 18-bearer-authorization |
 | 04-async | 09-persistence | 14-relationship-modeling | 19-acl-authorization |
-|  |  |  |  |
+
 | Week 6 | Week 7 | Week 8 | Week 9 |
+|----------------------------|-----------------------------|---------------------------|-----------------------------|
 | **React "kick-start"** | **Generic CMS** | **e-commerce store** | **enterprise/mobile store/cms** |
 | 26-component-based-ui-101 | 31-crud | 36-authentication | 41-aws-websites |
 | 27-testing-and-deployment | 32-dynamic-forms | 37-authorization | 42-aws-api-db-lamba |
 | 28-forms-props-state | 33-remote-api | 38-paymemt-gateways | 40-react-native |
 | 29-component-composition | 34-remote-crud | 39-web-security | 41-app-store-deployments |
-
 
 ---
 
