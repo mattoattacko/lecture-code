@@ -4,16 +4,17 @@
   - Next.js (Server side React)
   - React Native (basics)
   - Enforcing use of JSDoc for all code and Swagger for all APIs
-  - Using AWS instead of Mongo/Heroku/Travis for deployments
+  - Using AWS in addition to Mongo/Heroku/Travis for deployments
   - We spend so much time on node APIs, should we focus that on AWS+Lambda?
   - Using node as an aggregation/service layer rather than an API server
   - Scalable Theming
+  - CORS and UI Security (12 Factor Stuff?)
   - Docker
   - Electron
   - Shopping Cart vs Blog vs Microsite.  We could be showcasing all of these
 
 ## Lightning Talk Potential Topics
-Design Patterns
+Classic Design Patterns
 
 
 ---
