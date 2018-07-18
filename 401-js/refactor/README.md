@@ -1,15 +1,23 @@
 # 401 Refactor Notes
 
-### Things we need to add or talk about that are not currently part of the course
+## Things to talk about that are not currently part of the course
   - Next.js (Server side React)
   - React Native (basics)
+  - Enforcing use of JSDoc for all code and Swagger for all APIs
   - Using AWS instead of Mongo/Heroku/Travis for deployments
   - We spend so much time on node APIs, should we focus that on AWS+Lambda?
-  - Setting up a server as a middleware/service layer rather than a server
+  - Using node as an aggregation/service layer rather than an API server
+  - Scalable Theming
   - Docker
   - Electron
+  - Shopping Cart vs Blog vs Microsite.  We could be showcasing all of these
+
+## Lightning Talk Potential Topics
+Design Patterns
+
 
 ---
+
 ## What "production ready" code/sandboxing should students leave JS 401 With?
 
 ### Data Structures Library
@@ -72,9 +80,9 @@
    - Form to submit order and CC
    - Hits a "payment" route on the server
 
+## Course Lecture / Classroom Rhythm Suggestions
 ---
 
-## Course Lecture / Classroom Rhythm Suggestions
 
   - Lectures will introduce 2 new topics each day
     - Supportive, non-dependent concept (EDD, uploads, modules, css, generic component, etc)
@@ -112,15 +120,16 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
 - :10 - Project (Lab) overview and assignment
 
 ---
+
 ## Proposed Class Order
 
 | Week 1 | Week 2 | Week 3 | Week 4 |
 |----------------------------|-----------------------------|---------------------------|-----------------------------|
 | **DB/State Manager** | **Something cool** | **Generic API** | **Authenticate/ACL API** |
 | 01-node-ecosystem | 06-tcp-server | 11-express | 16-basic-authentication |
-| 02-object-array-mastery | 07-socket-io-server | 12-express-middleware | 17-oauth |
-| 03-classes-inheritance-fp | 08-vanilla-http-rest-server | 13-mongo-mongoose-orm | 18-bearer-authorization |
-| 04-async | 09-persistence | 14-relationship-modeling | 19-acl-authorization |
+| 02-classes-inheritance-fp | 07-socket-io-server | 12-express-middleware | 17-oauth |
+| 03-async | 08-vanilla-http-rest-server | 13-mongo-mongoose-orm | 18-bearer-authorization |
+| 04-cs-binary-bitmap | 09-persistence | 14-relationship-modeling | 19-acl-authorization |
 
 | Week 6 | Week 7 | Week 8 | Week 9 |
 |----------------------------|-----------------------------|---------------------------|-----------------------------|
@@ -134,34 +143,27 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
 
 ## 1st Half Details
 ### Week 1
-**Overview/Goals:** Language deep dive and tooling ramp-up. Students should come out of this week ready to work on projects, deploy, do proper TDD, and have a solid foundation on Classes, Inheritance, Async, Functional Programming, Spread and Deconstruction
+**Overview/Goals:** Language deep dive and tooling ramp-up. Students should come out of this week ready to work on projects, deploy, do proper TDD, and have a solid foundation on Classes, Inheritance, Async, Functional Programming
+- How/Where can we work in Spread and Deconstruction in this first week...
 
 **LAB:** Build a "Database / State Manager." Effectively, this is the old "list constructor", but using the all of the techniques from the week. The goal should be a list that can is stored to and retrieved from the filesystem. As a means of implementation, we can write "redux light" and make it a server-module and introduce that whole concept right now ... perhaps combining redux and the list? *We can use this on day 9 as well as to be a future module for storing configs or other things for future servers we write*
-
-... killed the bitmap in this first iteration. Maybe that should be the end of week lab? Can we roll that in with the state manager somehow?
 
 #### 01-node-ecosystem
   - **Lightning Talk:** Course Setup, Intro, Process, Tools, Expectations, Rubrics, How to submit code and lab assignments, etc
   - **Server Concept:** What is node and npm, package.json deep dive
   - **Lecture Topic:**
-     - tdd, deployment and continuous integration via git and travis
-     - greet module
+    - tdd, deployment and continuous integration via git and travis
+    - greet module
   - **Homework:**
     - arithmetic module
 
-#### 02-object-array-mastery (replaces 04-data-modeling-and-binary)
-  - **Lightning Talk:**
-  - **Server Concept:**
-  - **Lecture Topic:** spread, deconstruction
-  - **Homework:**
-
-#### 03-classes-inheritance-fp (re-order & re-name 02-tools-and-context)
+#### 02-classes-inheritance-fp (re-name 02-tools-and-context)
   - **Lightning Talk:**
   - **Server Concept:**
   - **Lecture Topic:** Classes, Inheritance (prototypal and classes), statics, functional programming.
   - **Homework:**
 
-#### 04-async
+#### 03-async
   - **Lightning Talk:**
   - **Server Concept:**
   - **Lecture Topic:** Callbacks, Promises, async/await
@@ -172,6 +174,12 @@ Based on the above, there are 80 points per week (20+10 DSA, 20 Practice Labs, 3
     - LAB: Read in 3 files content, return an array of content "in the right order"
       - Do it all 3 ways (cb,p,a/a)
 
+#### 04-cs-binary-bitmap
+  - **Lightning Talk:**
+  - **Server Concept:**
+  - **Lecture Topic:** spread, deconstruction
+  - **Homework:**
+    - Paired lab - bitmap manipulator, due Friday at midnight (2 days)
 
 
 ### Week 2
@@ -286,7 +294,7 @@ The only difference in the old 07/08 was the restful endpoints.
 
 ---
 
-## 2nd Half Modifications / Class Order
+## 2nd Half details
 ### Week 6
 
 **Overview/Goals:** Should learn this stuff ...
