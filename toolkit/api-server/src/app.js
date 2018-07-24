@@ -16,6 +16,11 @@ import notFound from './middleware/404.js';
 
 let app = express();
 
+// Swagger Route
+import swaggerUi from 'swagger-ui-express';
+const swaggerDocument = require('./api/swagger.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // App level middleware
 app.use(cors());
 app.use(morgan('dev'));

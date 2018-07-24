@@ -3,19 +3,10 @@
 import express from 'express';
 const router = express.Router();
 
-/**
- * @external String
- * @see middleware/models.js
- * Bring in model finder middleware, which provides a model to each api method
- */
 import * as models from '../middleware/models.js';
 router.param('model', models.finder);
 
-/**=
- * @public
- * @event
- * models route -- returns a list of all possible models
- */
+// GLOBAL/MODEL ROUTES
 router.get('/api/v1/models', (req, res) => {
   console.log('Fetching Models');
   let list = models.list();
@@ -23,8 +14,7 @@ router.get('/api/v1/models', (req, res) => {
 });
 
 router.get('/api/v1/:model/schema', (req, res) => {
-  let schema =
-    typeof req.model.jsonSchema === 'function' ? req.model.jsonSchema() : {};
+  let schema = typeof req.model.jsonSchema === 'function' ? req.model.jsonSchema() : {};
   sendJSON(res, schema);
 });
 
@@ -32,37 +22,28 @@ router.get('/api/v1/:model/schema', (req, res) => {
 
 router.get('/api/v1/:model', (req, res, next) => {
   console.log('Getting all from req.model');
-  req.model
-    .find({})
-    .then(data => sendJSON(res, data))
-    .catch(next);
+  req.model.find({}).then((data) => sendJSON(res, data)).catch(next);
 });
 
 router.get('/api/v1/:model/:id', (req, res, next) => {
   req.model
     .findOne({
-      _id: req.params.id,
+      _id: req.params.id
     })
-    .then(data => sendJSON(res, data))
+    .then((data) => sendJSON(res, data))
     .catch(next);
 });
 
 router.post('/api/v1/:model', (req, res, next) => {
   let record = new req.model(req.body);
-  record
-    .save()
-    .then(data => sendJSON(res, data))
-    .catch(next);
+  record.save().then((data) => sendJSON(res, data)).catch(next);
 });
 
 router.put('/api/v1/:model/:id', (req, res, next) => {
-  req.model
-    .findByIdAndUpdate(req.params.id, req.body)
-    .then(data => sendJSON(res, data))
-    .catch(err => {
-      console.log('ERR', err);
-      next(err);
-    });
+  req.model.findByIdAndUpdate(req.params.id, req.body).then((data) => sendJSON(res, data)).catch((err) => {
+    console.log('ERR', err);
+    next(err);
+  });
 });
 
 let sendJSON = (res, data) => {
