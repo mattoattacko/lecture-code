@@ -9,6 +9,10 @@
   - Using node as an aggregation/service layer rather than an API server
   - Scalable Theming
   - CORS and UI Security (12 Factor Stuff?)
+    - https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project#tab=Project_About
+  - Performance Tuning and load testing (atillary node module)
+    - https://github.com/codefellows/seattle-javascript-401d25/tree/master/back-end/19-load-testing
+    - https://github.com/seattle-javascript-401d25/16-19-auth-asset-mgt/blob/master/LAB-19.md
   - Docker
   - Electron
   - Shopping Cart vs Blog vs Microsite.  We could be showcasing all of these
@@ -306,7 +310,7 @@ The week will end with a supremely solid and well setup React boilerplate applic
 
 #### 26-component-based-ui-101 (renamed frontend-tooling-and-react)
   - **Lightning Talk:**
-  - **UI Concept:** Sass and scalable CSS Architecture
+  - **UI Concept:** SASS
   - **Lecture Topic:**
     - Component Based UI
     - Basic React App with a simple store to hold the app title
@@ -325,13 +329,13 @@ The week will end with a supremely solid and well setup React boilerplate applic
 
 #### 27-testing-and-deployment
   - **Lightning Talk:**
-  - **UI Concept:**
+  - **UI Concept:** SASS Modules, Mixins and Themes
   - **Lecture Topic:**
   - **Homework:**
 
 #### 28-forms-props-state
   - **Lightning Talk:**
-  - **UI Concept:**
+  - **UI Concept:** Modular CSS in component driven frameworks
   - **Lecture Topic:**
   - **Homework:**
 
@@ -409,8 +413,8 @@ Design and build an eCommerce storefront with a customer login, that allows them
 
 ### Week 9
 
-**Overview/Goals:** Should learn this stuff ...
-Node + Travis + Heroku ain't the only way. Students should become familiar with AWS as a deployment and content delivery platform
+**Overview/Goals:** Introduction to the new hotness -- AWS, Mobile Dev
+Node + Travis + Heroku ain't the only way. Students should become familiar with AWS as a deployment and content delivery platform as well how to play in the app stores with native apps.
 
 **LAB:** Project description here ...
 Deploy the store application at Amazon using pure AWS services. Implement device specific features and build it as a phone application suitable for Google Play or App Store launch.
@@ -440,8 +444,6 @@ Deploy the store application at Amazon using pure AWS services. Implement device
   - **Lecture Topic:**
   - **Homework:**
 
-#### 45-xxx
-  - **Lightning Talk:**
-  - **UI Concept:**
-  - **Lecture Topic:**
-  - **Homework:**
+#### 45-final-project-prep
+  - **Lecture Topic:** Dev Team Roles, Toolkit/Board Setup, Organization
+  - **Homework:** Prepare and submit requirements doc, org, board, deploy setup
