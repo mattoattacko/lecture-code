@@ -5,9 +5,9 @@ const models = requireAll(`${__dirname}/../models`);
 
 const list = () => Object.keys(models);
 
-const finder = (req,res,next) => {
+const finder = (req, res, next) => {
   let model = req.params.model;
-  if(model && models[model] && models[model].default ) {
+  if (model && models[model] && models[model].default) {
     req.model = models[model].default;
     next();
   }
@@ -16,4 +16,4 @@ const finder = (req,res,next) => {
   }
 };
 
-export {finder,list};
+export { finder, list };

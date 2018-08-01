@@ -39,6 +39,7 @@ app.use(errorHandler);
 let server = false;
 
 module.exports = {
+  app,
   start: (port) => {
     if (!server) {
       server = app.listen(port, (err) => {

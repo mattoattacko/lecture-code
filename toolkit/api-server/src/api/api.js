@@ -14,7 +14,8 @@ router.get('/api/v1/models', (req, res) => {
 });
 
 router.get('/api/v1/:model/schema', (req, res) => {
-  let schema = typeof req.model.jsonSchema === 'function' ? req.model.jsonSchema() : {};
+  let schema =
+    typeof req.model.jsonSchema === 'function' ? req.model.jsonSchema() : {};
   sendJSON(res, schema);
 });
 
@@ -34,16 +35,26 @@ router.get('/api/v1/:model/:id', (req, res, next) => {
     .catch(next);
 });
 
+router.delete('/api/v1/:model/:id', (req, res, next) => {
+  req.model
+    .findOneByIdAndDelete(req.params.id)
+    .then((data) => sendJSON(res, data))
+    .catch(next);
+});
+
 router.post('/api/v1/:model', (req, res, next) => {
   let record = new req.model(req.body);
   record.save().then((data) => sendJSON(res, data)).catch(next);
 });
 
 router.put('/api/v1/:model/:id', (req, res, next) => {
-  req.model.findByIdAndUpdate(req.params.id, req.body).then((data) => sendJSON(res, data)).catch((err) => {
-    console.log('ERR', err);
-    next(err);
-  });
+  req.model
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then((data) => sendJSON(res, data))
+    .catch((err) => {
+      console.log('ERR', err);
+      next(err);
+    });
 });
 
 let sendJSON = (res, data) => {
