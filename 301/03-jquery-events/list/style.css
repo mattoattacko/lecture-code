@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+    font-size:3em;
+}
+
+li {
+    padding: .25em;
+}
+li div {
+    font-size:.5em;
+    display:none;
+}
+
+li.active div {
+    display:block;
+}

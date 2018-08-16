@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Templating Demo</title>
+    <link rel="stylesheet" href="style.css"  />
+  </head>
+  <body>
+
+    <script id="family-template" type="text/x-handlebars-template">
+      <div class="card">
+        <header><h3>{{name}}</h3></header>
+        <div class="content">
+          {{about}}
+          <ul>
+            {{#each attributes}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <div class="card template">
+      <header><h3></h3></header>
+      <div class="content">
+        <ul></ul>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
