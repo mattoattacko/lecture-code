@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YayHoo Search Engine</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>YayHoo Search Engine - Categories</h1>
+    <ul>
+      <% items.forEach(item => { %>
+      <li><a href="/<%= item %>"><%= item %></a></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
