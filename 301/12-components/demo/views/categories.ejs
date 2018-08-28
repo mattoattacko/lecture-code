@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    <% include ./partials/header.ejs %>
+    <main>
+      <ul class="categories">
+        <% items.forEach( item => { %>
+
+        <li>
+          <a href="/<%= item.category %>"><%= item.category %></a>
+          <p><%= item.description %></p>
+        </li>
+
+        <% }); %>
+      </ul>
+    </main>
+    <% include ./partials/footer.ejs %>
+  </body>
+</html>
