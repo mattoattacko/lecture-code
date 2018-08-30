@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YayHoo Search Engine</title>
+    <% include ../partials/styles.ejs %>
+</head>
+<body>
+<% include ../partials/header.ejs %>
+<main>
+    <h2><%= category %></h2>
+    <div class="actions">
+        <a href="/add-link/<%= category %>/<%= id %>">Add a link to this category</a>
+        <a href="/search/<%= category %>/<%= id %>">Search the Web</a>
+    </div>
+    <ul class="listings">
+        <% items.forEach( item => { %>
+
+            <li>
+                <a href="/<%= item.url %>"><%= item.title %></a>
+                <p><%= item.description %></p>
+            </li>
+
+        <% }); %>
+    </ul>
+</main>
+<% include ../partials/footer.ejs %>
+<% include ../partials/scripts.ejs %>
+</body>
+</html>

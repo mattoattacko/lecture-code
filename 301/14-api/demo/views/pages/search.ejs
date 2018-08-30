@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YayHoo Search Engine</title>
+    <% include ../partials/styles.ejs %>
+</head>
+<body>
+<% include ../partials/header.ejs %>
+<main>
+    <h2>Supplemental Results for <%= category %></h2>
+    <ul class="listings">
+        <% items.forEach( item => { %>
+
+            <li>
+                <a href="/<%= item.url %>"><%= item.title %></a>
+                <p><%= item.description %></p>
+                <form method="POST" action="/add-link">
+                    <input type="hidden" name="category_id" value="<%= item.category_id %>" />
+                    <input type="hidden" name="category" value="<%= category %>" />
+                    <input type="hidden" name="title" value="<%= item.title %>" />
+                    <input type="hidden" name="url" value="<%= item.url %>" />
+                    <input type="hidden" name="description" value="<%= item.description %>" />
+                    <button>Add This!</button>
+                </form>
+            </li>
+
+        <% }); %>
+    </ul>
+</main>
+<% include ../partials/footer.ejs %>
+<% include ../partials/scripts.ejs %>
+</body>
+</html>
