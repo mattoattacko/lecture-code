@@ -7,19 +7,15 @@ import jwt from 'jsonwebtoken';
 const userSchema = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true},
-  email: {type: String, required: true},
-  role: {type: String, required:true, default:'user', enum:['admin','editor','user']},
+  email: {type: String},
+  role: {type: String, required:true, default:'user', enum:['admin','editor','user'] }
 });
 
 const capabilities = {
   user: ['read'],
   editor: ['read','update'],
-  admin: ['create','read','update','delete'],
+  admin: ['create','read', 'update', 'delete']
 };
-
-userSchema.post('init', function(next) {
-  this.capabilities = capabilities[this.role] || [];
-});
 
 // Before we save, hash the plain text password
 userSchema.pre('save', function(next) {
@@ -33,6 +29,7 @@ userSchema.pre('save', function(next) {
     // In the event of an error, do not save, but throw it instead
     .catch( error => {throw error;} );
 });
+
 
 userSchema.statics.createFromOAuth = function(incoming) {
 
@@ -88,7 +85,7 @@ userSchema.methods.comparePassword = function(password) {
 userSchema.methods.generateToken = function() {
   let tokenData = {
     id:this._id,
-    capabilities:this.capabilities,
+    capabilities: capabilities[this.role]
   };
   return jwt.sign(tokenData, process.env.SECRET || 'changeit' );
 };

@@ -10,7 +10,6 @@ export default (req, res, next) => {
       .then(user => {
         // We will always get back a "user" from mongo ... although it might be real and it might be null
         if(!user) { getAuth(); }
-
         // Given a real user that must mean that our token was good. Let the user through.
         // in larger systems, you might want to attach an ACL or permissions to the req.user object here.
         else { next(); }

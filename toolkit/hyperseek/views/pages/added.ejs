@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YayHoo Search Engine</title>
+    <% include ../partials/styles.ejs %>
+</head>
+<body>
+  <% include ../partials/header.ejs %>
+  <main>
+      <h2>Thanks</h2>
+      <a href="/<%= listing.url %>"><%= listing.title %></a>
+      <p><%= listing.description %></p>
+      <p><%= listing.keywords %></p>
+
+      <hr />
+      <a href="/links/<%= listing.category %>/<%= listing.category_id %>">Return to <%= listing.category %></a>
+  </main>
+  <% include ../partials/footer.ejs %>
+  <% include ../partials/scripts.ejs %>
+</body>
+</html>

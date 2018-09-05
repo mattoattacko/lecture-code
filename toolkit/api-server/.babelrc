@@ -8,8 +8,6 @@
     "transform-class-properties",
     "transform-decorators",
     "transform-react-constant-elements",
-    "transform-react-inline-elements",
-    "transform-runtime",
-    "transform-async-to-generator"
+    "transform-react-inline-elements"
   ]
 }

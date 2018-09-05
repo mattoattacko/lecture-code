@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YayHoo Search Engine</title>
+    <% include ../partials/styles.ejs %>
+</head>
+<body>
+  <% include ../partials/header.ejs %>
+  <main>
+
+    <h2>Add Link to <em><%= category %></em></h2>
+
+    <form method="POST" action="/add-link">
+
+      <input type="hidden" name="category_id" value="<%= id %>" />
+      <input type="hidden" name="category" value="<%= category %>" />
+      <input type="text" name="title" placeholder="Link Title..." />
+      <input type="text" name="url" placeholder="http://..." />
+      <input type="text" name="description" placeholder="Website Description..." />
+      <input type="text" name="keywords" placeholder="key,words,here,..."/>
+      <button>Add Link</button>
+
+    </form>
+  </main>
+  <% include ../partials/footer.ejs %>
+  <% include ../partials/scripts.ejs %>
+</body>
+</html>
