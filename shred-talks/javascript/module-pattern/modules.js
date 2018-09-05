@@ -1,9 +1,4 @@
 
-(function(module))
-
-
-
-
 let Dog = function(name, breed) {
 
   this.description = `${name} is a ${breed}`;
