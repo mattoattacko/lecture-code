@@ -9,6 +9,8 @@ body {
 
 strong {
     font-family: 'Oswald';
+    font-size:.75em;
+    opacity:.7;
     text-transform: uppercase;
 }
 
@@ -46,8 +48,9 @@ footer {
 }
 
 .deck.separator-top {
-    border-top:1em solid #fff;
-    border-image: linear-gradient(45deg, #ccc, #fff) 100;
+
+    border-top: .5em solid #fff;
+    border-image: repeating-linear-gradient( -45deg, transparent 5px, #eee 10px, #000 6px) 11;
     padding-top:1.5em;
     margin-top:2.5em;
 }
@@ -129,6 +132,22 @@ footer {
     
     .deck.col-1 .card {
         width: 100%;
+    }
+
+    .card header {
+        overflow:hidden;
+    }
+
+    .card header span:first-child {
+        float:left
+    }
+
+    .card header span:last-child {
+        float:right
+    }
+
+    .card figure {
+        margin-top:1em;
     }
 
     .card .copy p {
