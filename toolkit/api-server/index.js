@@ -8,7 +8,12 @@ require('babel-register');
 
 // Start up DB Server
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI);
+const options = {
+  useNewUrlParser:true,
+  useCreateIndex: true
+};
+mongoose.connect(process.env.MONGODB_URI, options);
+
 
 // Require our main app file and start the web server up
 require('./src/app.js').start(process.env.PORT);

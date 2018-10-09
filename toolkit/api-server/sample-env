@@ -1,0 +1,11 @@
+PORT=3000
+STORAGE=filesystem
+NODE_ENV=dev
+MONGODB_URI=mongodb://localhost:27017/store
+API_URL=http://localhost:3000
+AUTH_URL=http://localhost:3000
+LOCAL_CLIENT_URL=http://localhost:3001
+CLIENT_URL=https://3r3rnrlx46.codesandbox.io
+COOKIE_DOMAIN=codesandbox.io
+GOOGLE_CLIENT_ID=560654039720-5kmgrmq63ctu07hb8e973t589jio17qf.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=5R6dGDKZ7IokNCmj3AwWypV6

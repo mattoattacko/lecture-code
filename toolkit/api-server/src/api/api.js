@@ -22,7 +22,7 @@ router.get('/api/v1/:model/schema', (req, res) => {
 // RECORD LEVEL ROUTES
 
 router.get('/api/v1/:model', (req, res, next) => {
-  console.log('Getting all from req.model');
+  console.log('Getting all from', req.params.model);
   req.model.find({}).then((data) => sendJSON(res, data)).catch(next);
 });
 
