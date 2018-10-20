@@ -1,0 +1,67 @@
+header, footer, .card {
+    background: #ccc;
+    border:1px solid #000;
+    text-align:center;
+}
+
+/* God Forgive Me ... */
+
+header {
+    line-height:75px;
+}
+
+footer {
+    line-height:80px;
+}
+
+.card {
+    line-height:125px;
+}
+
+.deck.col-4 .card {
+    line-height:250px;
+}
+
+/* Border (not) Fun ... not scalable */
+.deck.col-4 .card:nth-child(even) {
+    border-left:none;
+}
+header {
+    border-bottom: 0;
+}
+.card {
+    border-bottom:0;
+}
+
+@media (min-width: 960px) {
+
+    header {
+        line-height: 100px;
+    }
+
+    footer {
+        line-height: 150px;
+    }
+
+    .deck.col-2 .card {
+        line-height: 200px;
+    }
+
+    .deck.col-4 .card {
+        line-height: 250px;
+    }
+
+    .deck.lefty .card {
+        line-height:600px;
+    }
+
+    /* Border (not) Fun ... not scalable */
+    .deck.lefty .card {
+        border-bottom:1px solid black; /* not scalable */
+    }
+    .deck.col-2 .card, .deck.col-4 .card {
+        border-bottom:0;
+        border-left:0;
+    }
+
+}

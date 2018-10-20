@@ -1,0 +1,65 @@
+header, main, footer {
+    margin:auto;
+    width: 480px;
+}
+
+header {
+    height: 75px;
+}
+
+footer {
+    height: 80px;
+}
+
+.deck {
+    overflow:hidden;
+}
+
+.card {
+    float:left;
+    height:125px;
+    width:100%;
+}
+
+.deck.col-4 .card {
+    height: 250px;
+    width: 240px;
+}
+
+
+@media (min-width: 960px) {
+
+    header {
+        height: 100px;
+    }
+
+    footer {
+        height: 150px;
+    }
+
+    header, main, footer {
+        width: 960px;
+    }
+
+    .deck.col-2 .card {
+        height: 200px;
+        width: 380px;
+    }
+
+    .deck.col-4 .card {
+        height: 250px;
+        width: 190px;
+    }
+
+    .deck.lefty {
+        float:left;
+        height:600px;
+        width: 200px;
+    }
+
+    .deck.lefty .card {
+        width: 100%;
+        height: 100%;
+    }
+
+}
