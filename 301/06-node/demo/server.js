@@ -39,7 +39,7 @@ function searchToLatLong(query) {
 }
 
 function Location(data) {
-  this.formatted_query: data.formatted_address;
+  this.formatted_query= data.formatted_address;
   this.latitude = data.geometry.location.lat;
   this.longitude = data.geometry.location.lng;
 }
