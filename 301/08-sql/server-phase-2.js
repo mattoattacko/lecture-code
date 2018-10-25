@@ -32,10 +32,13 @@ app.listen(PORT, () => console.log(`App is up on ${PORT}`) );
 function getLocation(request, response) {
 
   const locationHandler = {
+    
     query: request.query.data,
+    
     cacheHit: (results) => { 
       response.send(results.rows[0]);
     },
+    
     cacheMiss: () => {
       Location.fetchLocation(request.query.data)
         .then( results => response.send(results) );
