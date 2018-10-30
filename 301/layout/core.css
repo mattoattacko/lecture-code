@@ -1,0 +1,55 @@
+* {
+    box-sizing:border-box;
+    font-size: 2em;
+}
+
+html, body {
+    height:100%;
+}
+
+body > * {
+    border: 1px solid #000;
+}
+
+body > header, body > footer {
+    background: #444;
+    color: #eee;
+    /*font-size: 2em;*/
+    height: 70px;
+    line-height: 70px;
+    text-align:center;
+}
+
+main {
+    background: #fafafa;
+}
+
+main .content {
+    background: #000;
+    color:#fff;
+}
+
+.deck {
+    background: #1EAEDB;
+}
+
+main aside {
+    background: #9C9000;
+    color:#fff;
+}
+
+main nav {
+    background: #ff0000;
+    color:#fff;
+}
+
+.deck:first-child {
+    border-bottom: 1px solid #000;
+}
+
+.centeredWords {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

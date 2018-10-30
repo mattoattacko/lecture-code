@@ -1,0 +1,26 @@
+.counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    span {
+        display: inline-block;
+        border: 1px solid #eee;
+    }
+
+}
+.count {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+}
+
+.clicker {
+    cursor: pointer;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    width: 44px;
+}

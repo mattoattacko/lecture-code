@@ -1,0 +1,23 @@
+@media( min-width: 960px ) {
+
+    main {
+        display:grid;
+        height: calc(100% - 140px);
+        grid-template-columns: 200px 1fr 200px;
+    }
+
+    main > nav {
+        order: 1;
+    }
+
+    main > aside {
+        order: 3;
+    }
+
+    main > .content {
+        order: 2;
+        display:grid;
+        grid-template-rows: 50% 50%;
+    }
+
+}
