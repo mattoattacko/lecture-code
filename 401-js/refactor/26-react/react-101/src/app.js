@@ -1,15 +1,38 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import Header from "./header.js";
+import Footer from "./footer.js";
+import "./app.scss";
 
-import Header from './components/header/header.js';
-import Footer from './components/footer/footer.js';
-import Home from './components/home/home.js';
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stuff: 0
+    };
+  }
+
+  handleButtonClick = e => {
+    e.preventDefault();
+    this.setState({ stuff: Math.floor(Math.random() * 20 + 1) });
+  };
+
+  render() {
+    return (
+      <div>
+        <h4>{this.state.stuff}</h4>
+        <button onClick={this.handleButtonClick}>Click Me</button>
+      </div>
+    );
+  }
+}
 
 class App extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Home />
+        <Main />
         <Footer />
       </React.Fragment>
     );
